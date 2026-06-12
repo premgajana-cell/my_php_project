@@ -7,13 +7,24 @@ $result = mysqli_query(
 );
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Posts</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
 <h2>All Posts</h2>
 
-<a href="create.php">
-Add Post
-</a>
+<center>
+<a href="create.php">Add New Post</a>
+<a href="../auth/logout.php">Logout</a>
+</center>
 
-<table border="1">
+<br>
+
+<table>
 
 <tr>
     <th>ID</th>
@@ -33,20 +44,27 @@ while($row=mysqli_fetch_assoc($result))
 <td><?= $row['content']; ?></td>
 
 <td>
-
-<a href="update.php?id=<?=$row['id'];?>">
+<a class="edit-btn"
+href="update.php?id=<?= $row['id']; ?>">
 Edit
 </a>
 
-<a href="delete.php?id=<?=$row['id'];?>">
+|
+
+<a class="delete-btn"
+href="delete.php?id=<?= $row['id']; ?>">
 Delete
 </a>
 
 </td>
 
 </tr>
+
 <?php
 }
 ?>
 
 </table>
+
+</body>
+</html>

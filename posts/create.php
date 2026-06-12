@@ -16,20 +16,29 @@ if(isset($_POST['save']))
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Post</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h2>Create New Post</h2>
+
 <form method="POST">
 
-Title:
-<input type="text" name="title">
+<label>Title</label>
+<input type="text" name="title" required>
 
-<br><br>
+<label>Content</label>
+<textarea name="content" required></textarea>
 
-Content:
-<textarea name="content"></textarea>
-
-<br><br>
-
-<button name="save">
-Save Post
+<button type="submit" name="save">
+    Save Post
 </button>
 
 </form>
+
+</body>
+</html>

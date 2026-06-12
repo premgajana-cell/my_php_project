@@ -13,20 +13,40 @@ if(isset($_POST['register']))
     $sql = "INSERT INTO users(username,password)
             VALUES('$username','$password')";
 
-    mysqli_query($conn,$sql);
+    mysqli_query($conn, $sql);
 
-    echo "Registration Successful";
+    echo "<p class='success'>Registration Successful</p>";
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<h2>User Registration</h2>
+
 <form method="POST">
-    Username:
-    <input type="text" name="username">
 
-    Password:
-    <input type="password" name="password">
+    <label>Username:</label>
+    <input type="text" name="username" required>
 
-    <button name="register">
+    <label>Password:</label>
+    <input type="password" name="password" required>
+
+    <button type="submit" name="register">
         Register
     </button>
+
 </form>
+
+<p style="text-align:center;">
+    Already have an account?
+    <a href="login.php">Login Here</a>
+</p>
+
+</body>
+</html>
